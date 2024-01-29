@@ -13,9 +13,6 @@ import os
 import copy
 from kivy.app import App
 import subprocess
-import threading
-from playsound import playsound
-from threading import Thread
 
 first_img_list = []
 
