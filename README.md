@@ -1,1 +1,1 @@
-# PVC_Chess_Game
+# Chess Game with Minimax Algorithm
