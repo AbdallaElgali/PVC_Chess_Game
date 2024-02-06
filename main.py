@@ -10,7 +10,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 
 Window.size = (800, 800)
 
-path = r'C:\Users\scorp\Desktop\Programmin\ChessGames\ChessMVC_PVC_Trial_1\ChessLayout.kv'
+path = r'C:\Users\scorp\Desktop\Programmin\ChessGames\ChessMVC_PVC_Trial_1\ChessLayout.kv'  # Change path to your local directory
 class ChessApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
