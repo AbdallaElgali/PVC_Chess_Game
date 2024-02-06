@@ -1,0 +1,850 @@
+Manager:
+    MainScreen:
+    Chess:
+
+
+<MainScreen>
+    name: "MainScreen"
+
+    Image:
+        size: root.width, root.height
+        source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\peakpx.jpg'
+    GridLayout:
+
+        size_hint: 0.6, 0.7
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        spacing: "12dp"
+        padding: "12dp"
+
+        cols: 1
+
+
+
+        NextButton:
+            text : "Black Player"
+
+            size_hint: None, None
+            size: self.parent.width if self.parent else 0, 200
+            font_size: 28
+            player: 'black'
+            on_release:
+                app.root.current = "Chess"
+                self.on_release
+
+
+            background_normal: ''
+            background_color: 73/255, 65/255, 52/255, 1
+
+        NextButton:
+            text : "White Player"
+
+            size_hint: None, None
+            size: self.parent.width if self.parent else 0, 200
+            font_size: 28
+            player: 'white'
+            on_release:
+                app.root.current = "Chess"
+                self.on_release
+
+            background_normal: ''
+            background_color: 73/255, 65/255, 52/255, 1
+
+<CustomButton>
+    size_hint: None, None
+    size: self.parent.width/8 if self.parent else 0, self.parent.height/8 if self.parent else 0
+    on_release: root.on_release()
+    background_normal: ''
+    #background_down: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+
+<CustomImage>
+    size_hint: None, None
+    size: self.texture_size
+    pos: (self.parent.center_x - self.width / 2), (self.parent.center_y - self.height / 2)
+
+
+<Chess>
+    name: "Chess"
+    GridLayout:
+        id: chess_grid
+        cols: 8
+        rows: 8
+        size: root.width, root.height
+
+#-----------------------------------------Row 1-------------------------------------------------------
+
+        CustomButton:
+            id: 1
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_rook.png'
+                image_id: 1
+
+        CustomButton:
+            id: 2
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_knight.png'
+                image_id: 2
+
+        CustomButton:
+            id: 3
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_bishop.png'
+                image_id: 3
+
+        CustomButton:
+            id: 4
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_Queen.png'
+                image_id: 4
+
+        CustomButton:
+            id: 5
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_king.png'
+                image_id: 5
+
+        CustomButton:
+            id: 6
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_bishop.png'
+                image_id: 6
+
+        CustomButton:
+            id: 7
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_knight.png'
+                image_id: 7
+
+        CustomButton:
+            id: 8
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_rook.png'
+                image_id: 8
+
+#-----------------------------------------Row 2-------------------------------------------------------
+        CustomButton:
+            id: 9
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 9
+
+        CustomButton:
+            id: 10
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 10
+
+        CustomButton:
+            id: 11
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 11
+
+        CustomButton:
+            id: 12
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 12
+
+        CustomButton:
+            id: 13
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 13
+
+        CustomButton:
+            id: 14
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 14
+
+        CustomButton:
+            id: 15
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 15
+
+        CustomButton:
+            id: 16
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\black_pawn.png'
+                image_id: 16
+
+#-----------------------------------------Row 3-------------------------------------------------------
+
+        CustomButton:
+            id: 17
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 17
+
+        CustomButton:
+            id: 18
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 18
+
+        CustomButton:
+            id: 19
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 19
+
+        CustomButton:
+            id: 20
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 20
+
+        CustomButton:
+            id: 21
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 21
+
+        CustomButton:
+            id: 22
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 22
+
+        CustomButton:
+            id: 23
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 23
+
+        CustomButton:
+            id: 24
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 24
+
+#-----------------------------------------Row 4-------------------------------------------------------
+        CustomButton:
+            id: 25
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 25
+
+        CustomButton:
+            id: 26
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 26
+
+        CustomButton:
+            id: 27
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 27
+
+        CustomButton:
+            id: 28
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 28
+
+        CustomButton:
+            id: 29
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 29
+
+        CustomButton:
+            id: 30
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 30
+
+        CustomButton:
+            id: 31
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 31
+
+        CustomButton:
+            id: 32
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 32
+
+
+#-----------------------------------------Row 5-------------------------------------------------------
+
+        CustomButton:
+            id: 33
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 33
+
+        CustomButton:
+            id: 34
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 34
+
+        CustomButton:
+            id: 35
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 35
+
+        CustomButton:
+            id: 36
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 36
+
+        CustomButton:
+            id: 37
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 37
+
+        CustomButton:
+            id: 38
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 38
+
+        CustomButton:
+            id: 39
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 39
+
+        CustomButton:
+            id: 40
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 40
+
+#-----------------------------------------Row 6-------------------------------------------------------
+
+        CustomButton:
+            id: 41
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 41
+
+        CustomButton:
+            id: 42
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 42
+
+        CustomButton:
+            id: 43
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 43
+
+        CustomButton:
+            id: 44
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 44
+
+        CustomButton:
+            id: 45
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 45
+
+        CustomButton:
+            id: 46
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 46
+
+        CustomButton:
+            id: 47
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 47
+
+        CustomButton:
+            id: 48
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\Nothing.png'
+                image_id: 48
+
+#-----------------------------------------Row 7-------------------------------------------------------
+
+        CustomButton:
+            id: 49
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 49
+
+        CustomButton:
+            id: 50
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 50
+
+        CustomButton:
+            id: 51
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 51
+
+        CustomButton:
+            id: 52
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 52
+
+        CustomButton:
+            id: 53
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 53
+
+        CustomButton:
+            id: 54
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 54
+
+        CustomButton:
+            id: 55
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 55
+
+        CustomButton:
+            id: 56
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_pawn.png'
+                image_id: 56
+
+#-----------------------------------------Row 8-------------------------------------------------------
+        CustomButton:
+            id: 57
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_rook.png'
+                image_id: 57
+
+        CustomButton:
+            id: 58
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_knight.png'
+                image_id: 58
+
+        CustomButton:
+            id: 59
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_bishop.png'
+                image_id: 59
+
+        CustomButton:
+            id: 60
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_queen.png'
+                image_id: 60
+
+        CustomButton:
+            id: 61
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_king.png'
+                image_id: 61
+
+        CustomButton:
+            id: 62
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_bishop.png'
+                image_id: 62
+
+        CustomButton:
+            id: 63
+            canvas:
+                Color:
+                    rgba: 0,0,0,.5
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_knight.png'
+                image_id: 63
+
+        CustomButton:
+            id: 64
+            canvas:
+                Color:
+                    rgba: 0,0,0,.1
+                Rectangle:
+                    pos: self.pos
+
+            CustomImage:
+                source: r'C:\Users\scorp\Desktop\Programmin\Chess Game\images\white_rook.png'
+                image_id: 64
