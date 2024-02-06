@@ -7,8 +7,10 @@ from kivy.lang import Builder
 import threading
 import playsound
 from kivy.uix.screenmanager import ScreenManager, Screen
+
 Window.size = (800, 800)
 
+path = r'C:\Users\scorp\Desktop\Programmin\ChessGames\ChessMVC_PVC_Trial_1\ChessLayout.kv'
 class ChessApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -38,6 +40,6 @@ class ChessApp(App):
 if __name__ != '__main__':
     pass
 else:
-    Builder.load_file(r'C:\Users\scorp\Desktop\Programmin\ChessGames\ChessMVC_PVC_Trial_1\ChessLayout.kv')
+    Builder.load_file(path)
 
     ChessApp().run()
