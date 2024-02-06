@@ -10,6 +10,7 @@ This project implements a Chess Game using the Kivy framework in Python, featuri
 - view.py: This module contains the visual aspect of the game and some functionality which concerns the visual interaction between the user and the game. 
 - main.py: This is the controller of the game which connects the game functionality in the model.py and the visual in the view.py. 
 - images: This folder contains the images which are used in the game
+- ChessLayout.kv: This is the layout of the chess app, together with the view.py represents the visual aspect of the game. This part is written in the kivy-framework language. 
   
 ## Features
 1. Interactive GUI: The game provides a user-friendly graphical interface built with Kivy, enabling players to interact with the chessboard seamlessly.
